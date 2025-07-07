@@ -69,6 +69,7 @@ def extract_tolerance_values(text):
         )
         if value_match:
             value = value_match.group(1)
+            value = f"±{value}"  # Add ± prefix
             label = "CIRCULARITY" if tol_type.upper() == "ROUNDNESS" else tol_type.upper()
             tol_results.append((label.capitalize(), value))
 
